@@ -17,6 +17,10 @@
     "react-scripts": "3.4.1",
     "node": "v10.15.0"
   },
+  "engines": {
+    "node": ">=10.15.0",
+    "npm": ">=6.11.3"
+  },
   "scripts": {
     "start": "react-scripts start",
     "server": "go run ./backend/main.go",
