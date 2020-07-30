@@ -1,6 +1,6 @@
 {
-  "name": "SeanPortfolio",
-  "homepage": "http://seanbinvt.github.io",
+  "name": "Seans-Portfolio",
+  "homepage": "https://seanb.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,7 +25,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "proxy": "https://battlepasteapi.herokuapp.com/",
+  "proxy": "https://battlepasteapi.herokuapp.com",
   "eslintConfig": {
     "extends": "react-app"
   },
