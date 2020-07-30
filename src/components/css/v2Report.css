@@ -1,0 +1,164 @@
+/*
+This file contains CSS from www.astroempires.com in order to properly emulate the visual representation of the Version2 Battle Report.
+Most of the work within is not of Sean Blevins, nor is any of the images used throughout. 
+*/
+
+.ticker {
+  color: #aaa;
+  font-weight: bold;
+  padding: 5px 12px 10px 12px !important;
+  background: #122334;
+  display: inline-block;
+}
+
+center {
+  line-height: 1.2;
+}
+
+.important {
+  font-weight: bold;
+  color: #ff0000;
+}
+
+.battle-report_info th,
+.battle-report_attack th,
+.battle-report_defense th {
+  height: 21px;
+  padding: 1px 0 4px 0 !important;
+  border: 1px solid #22354d !important;
+  border-width: 0px 0 1px 0 !important;
+}
+.battle-report_subtitle th {
+  height: auto !important;
+}
+
+.battle-report th {
+  text-align: center;
+}
+
+.battle-report_info td,
+.battle-report_attack td,
+.battle-report_defense td {
+  padding: 1px 0 1px 3px !important;
+  border: 1px solid #1c3043 !important;
+  border-width: 0px 0 1px 0 !important;
+}
+
+#top-header-offline table,
+tr,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+.battle-report_info,
+.battle-report_attack,
+.battle-report_defense {
+  border: 1px solid #22354d !important;
+}
+
+.battle-report_subtitle {
+  background: rgba(256, 256, 256, 0.05) !important;
+}
+
+.link {
+  color: #eac767;
+  display: inline-block;
+}
+
+.hilite {
+  color: #ffa500;
+}
+
+.battle-report_info td,
+.battle-report_attack td,
+.battle-report_defense td {
+  padding: 1px 0px 1px 3px !important;
+  border: 1px solid #1c3043 !important;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-width: 0px 0 1px 0 !important;
+}
+
+table,
+tr,
+td,
+th {
+  font-size: 100%;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+
+table {
+  text-align: left;
+}
+
+#top-header-offline table,
+tr,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 12px;
+  font-family: verdana, arial;
+  color: #fff;
+  text-align: center;
+}
+
+table,
+tr,
+td,
+th {
+  font-size: 100%;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  empty-cells: show;
+  vertical-align: middle;
+}
+
+.battle-report {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.battle-report_attack div,
+.battle-report_defense div {
+  display: inline-block;
+}
+
+.battle-report_info {
+  width: 380px;
+  margin: auto;
+  background: #173f5f;
+}
+.battle-report_attack {
+  width: 580px;
+  margin: auto;
+  background: #112638;
+}
+.battle-report_defense {
+  width: 580px;
+  margin: auto;
+  background: #112638;
+}
+
+.battle-report_info {
+  background: url("./images/battle-report_info_center.png") center top repeat-x;
+}
+
+.battle-report_attack {
+  background: url("./images/battle-report_attack_center.png") center top
+    repeat-x;
+}
+.battle-report_defense {
+  background: url("./images/battle-report_defense_center.png") center top
+    repeat-x;
+}
