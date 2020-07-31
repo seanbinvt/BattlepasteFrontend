@@ -1,6 +1,6 @@
 {
   "name": "Seans-Portfolio",
-  "homepage": "https://seanb.herokuapp.com/",
+  "homepage": "https://battlepasteapi.herokuapp.com",
   "version": "0.1.0",
   "main": "server.js",
   "dependencies": {
