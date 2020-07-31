@@ -2,7 +2,7 @@
   "name": "Seans-Portfolio",
   "homepage": "https://seanb.herokuapp.com/",
   "version": "0.1.0",
-  "private": true,
+  "main": "server.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "dev-server": "webpack-dev-server --open",
-    "start": "node ./server.js",
+    "start": "node server.js",
     "build": "webpack -p",
     "heroku-postbuild": "npm run build"
   },

@@ -12,4 +12,4 @@ app.set('port', port);
 app.get('*', (request, response) => {
     response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
-server.listen(port, () => console.log(`Running on :${port}`));
+console.log(`Running on :${port}`)
