@@ -65,7 +65,7 @@ export default class SearchBattlePaste extends Component {
     onSubmit(e) {
         e.preventDefault();
         if ((this.state.coordinate[0] === this.state.server[0]) || this.state.coordinate === "") {
-            axios.post('/battlereport/search', {
+            fetch('https://battlepasteapi.herokuapp.com/battlereport/search', {
                 server: this.state.server,
                 coordinate: this.state.coordinate,
                 minTotalLoss: this.state.minFleet,
