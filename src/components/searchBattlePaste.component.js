@@ -65,6 +65,7 @@ export default class SearchBattlePaste extends Component {
     onSubmit(e) {
         e.preventDefault();
         if ((this.state.coordinate[0] === this.state.server[0]) || this.state.coordinate === "") {
+            console.log('here')
             axios.post('/battlereport/search', {
                 server: this.state.server,
                 coordinate: this.state.coordinate,

@@ -1,18 +1,41 @@
+const { createServer } = require('http');
 const express = require('express');
-const http = require('http');
+const compression = require('compression');
+const morgan = require('morgan');
 const path = require('path');
-let app = express();
-const port = process.env.PORT || '3000';
 
+const PORT = process.env.PORT || 8080;
 
-app.use(express.static('/build'));
+const app = express()
+const dev = app.get('env') !== 'production'
 
+if (!dev) {
+    app.disable('x-powered-by')
+    app.use(compression())
+    app.use(morgan('common'))
 
-app.use(express.static(path.join(__dirname, 'build')));
+    app.use(express.static(path.resolve(__dirname, 'build')))
 
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+    })
+}
 
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+if (dev) {
+    app.use(morgan('dev'))
 
-app.listen(port)
+    app.use(express.static("public"));
+
+    /*app.get('/', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+    })*/
+
+}
+
+const server = createServer(app)
+
+server.listen(PORT, err => {
+    if (err) throw err;
+
+    console.log("Server listening")
+})
