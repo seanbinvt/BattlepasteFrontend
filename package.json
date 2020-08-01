@@ -24,7 +24,7 @@
     "npm": "6.11.3"
   },
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "server": "go run ./backend/main.go",
     "client": "npm run start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
