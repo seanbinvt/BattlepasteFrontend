@@ -12,6 +12,8 @@
 /build
 
 /backend
+/battlepasteapi
+
 
 # misc
 .DS_Store
