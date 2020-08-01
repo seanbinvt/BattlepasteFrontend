@@ -45,7 +45,11 @@ export default class ViewBattlePaste extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://battlepasteapi.herokuapp.com/battlereport/' + this.state.server + '/' + this.state.mongoID)
+        axios.get('http://battlepasteapi.herokuapp.com/battlereport/' + this.state.server + '/' + this.state.mongoID, {
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            }
+        })
             .then((response) => {
                 this.setState({ report: response.data, isAuthenticating: false });
                 console.log("here")
