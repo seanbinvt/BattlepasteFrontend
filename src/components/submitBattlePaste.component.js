@@ -30,7 +30,7 @@ export default class SubmitBattlePaste extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        axios.post('https://battlepasteapi.herokuapp.com/battlereport/search', {
+        axios.post('http://battlepasteapi.herokuapp.com/battlereport/search', {
             battlePaste: this.state.data
         }).then(function (response, error) {
             if (error) {
