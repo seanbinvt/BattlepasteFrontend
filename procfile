@@ -1,2 +1,2 @@
-web = node server.js
-worker = go run ./backend/main.go
+web: node server.js
+worker: backend/bin/main

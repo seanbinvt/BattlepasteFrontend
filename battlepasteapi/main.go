@@ -14,7 +14,6 @@ import (
 	reportParse "battlereportparsing"
 
 	"github.com/gorilla/mux" // http router used
-	"github.com/joho/godotenv"
 
 	// for .env variables compatability
 
@@ -44,11 +43,6 @@ type SearchRequest struct {
 }
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 	client, err := mongo.Connect(ctx, options.Client().ApplyURI(os.Getenv("ATLAS_URI")))
@@ -64,11 +58,6 @@ func main() {
 var db *mongo.Database
 
 func handler() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	r := mux.NewRouter()
 	r.HandleFunc("/battlereport/{server}/{reportID}", viewBattleReport).Methods(http.MethodGet)
 	r.HandleFunc("/battlereport/submit", submitBattleReport).Methods(http.MethodPost)

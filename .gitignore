@@ -8,12 +8,6 @@
 # testing
 /coverage
 
-# production
-/build
-
-/backend
-/battlepasteapi
-
 
 # misc
 .DS_Store
