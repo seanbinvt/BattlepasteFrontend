@@ -59,9 +59,9 @@ var db *mongo.Database
 
 func handler() {
 	r := mux.NewRouter()
-	r.HandleFunc("/battlereport/{server}/{reportID}", viewBattleReport).Methods(http.MethodGet)
-	r.HandleFunc("/battlereport/submit", submitBattleReport).Methods(http.MethodPost)
-	r.HandleFunc("/battlereport/search", searchBattleReport).Methods(http.MethodPost)
+	r.HandleFunc("/api/battlereport/{server}/{reportID}", viewBattleReport).Methods(http.MethodGet)
+	r.HandleFunc("/api/battlereport/submit", submitBattleReport).Methods(http.MethodPost)
+	r.HandleFunc("/api/battlereport/search", searchBattleReport).Methods(http.MethodPost)
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), r)) // If error then log to console
 }
 
