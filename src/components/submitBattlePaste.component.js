@@ -30,7 +30,7 @@ export default class SubmitBattlePaste extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        axios.post('/api/battlereport/search', {
+        axios.post('https://battlepasteapi.herokuapp.com/battlereport/submit', {
             "Access-Control-Allow-Origin": "*",
             battlePaste: this.state.data
         }).then(function (response, error) {
