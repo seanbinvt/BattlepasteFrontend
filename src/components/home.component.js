@@ -13,7 +13,7 @@ export default class Navbar extends Component {
                 <div className="homeList">
                     <p>Hello, my name is Sean and I am a Computer Software Engineering student. I am interested in doing software development in familiar and unfamiliar fields.</p>
 
-                    <p>I am currently looking for employment opportunities. Mainly interested in freelance work and paid Summer internship opportunities. Please direct related offers in the Software Development field to <a href="mailto:sean@seanblevins.net">sean@seanblevins.net</a>.</p>
+                    <p>I am currently looking for employment opportunities. Mainly interested in freelance work, paid Summer internship opportunities, and post-graduation employment opportunities. Please direct related offers in the Software Development field to <a href="mailto:sean@seanblevins.net">sean@seanblevins.net</a>.</p>
 
                     <p>Please direct less formal discussions, such as software recommendations of any of my current software, to my Discord contact (<b>Sean #3307</b>).</p>
 
