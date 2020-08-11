@@ -17,9 +17,6 @@ export default class Navbar extends Component {
 
                     <p>Please direct less formal discussions, such as software recommendations of any of my current software, to my Discord contact (<b>Sean #3307</b>).</p>
 
-                    <center>
-                        <h5><a href="https://github.com/seanbinvt">Github</a></h5>
-                    </center>
                     <br />
                     <center>
                         <h5>Experience:</h5>
