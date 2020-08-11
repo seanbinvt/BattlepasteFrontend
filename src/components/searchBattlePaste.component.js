@@ -145,6 +145,6 @@ export default class SearchBattlePaste extends Component {
 }
 
 const Ticker = props => (
-    <div className="row ticker"> <a href={'/battlepaste/' + props.report.Server + '/' + props.report._id}><span className="link">{props.report.Attacker.PlayerTag} {props.report.Attacker.PlayerName}</span> vs. <span className="link">{props.report.Defender.PlayerTag} {props.report.Defender.PlayerName}</span> losses: {(props.report.AttackerLoss).toLocaleString()} / {(props.report.DefenderLoss).toLocaleString()}</a ></div >
+    <a href={'/battlepaste/' + props.report.Server + '/' + props.report._id} className="row"> <div className="ticker"><span className="link">{props.report.Attacker.PlayerTag} {props.report.Attacker.PlayerName}</span> vs. <span className="link">{props.report.Defender.PlayerTag} {props.report.Defender.PlayerName}</span> losses: {(props.report.AttackerLoss).toLocaleString()} / {(props.report.DefenderLoss).toLocaleString()}</div ></a >
 )
 
