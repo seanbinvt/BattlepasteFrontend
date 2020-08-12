@@ -51,10 +51,10 @@ export default class SubmitBattlePaste extends Component {
                     <p>Please paste your battle report starting from "Battle Report" to the very end.</p>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
-                            <textarea required onChange={this.onChangeInfo} rows="25" cols="50" />
+                            <textarea required onChange={this.onChangeInfo} rows="25" cols="50" style={{ width: "100%", maxWidth: "450px"}}/>
                         </div>
                         <div className="form-group">
-                            <input type="submit" value="Submit" className="btn btn-primary" />
+                            <input type="submit" value="Submit" className="btn btn-primary"/>
                         </div>
                     </form>
                 </center>

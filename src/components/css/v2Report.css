@@ -137,7 +137,7 @@ th {
 .battle-report_info {
   min-width: min-content;
   max-width: 380px;
-  width: 60%;
+  width: 100%;
   background: #112638;
   margin: auto;
 }
