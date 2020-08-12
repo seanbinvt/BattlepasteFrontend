@@ -29,7 +29,10 @@ export default class Navbar extends Component {
                             <p><b>Programming:</b> C, Python, Java, JavaScript, Go</p>
                         </li>
                         <li>
-                            <p><b>Web:</b> HTML/CSS, PHP, JavaScript, SQL, MongoDB, Express, React</p>
+                            <p><b>Web:</b> HTML/CSS, PHP, JavaScript, Express, React</p>
+                        </li>
+                        <li>
+                            <p><b>Database:</b> SQL, MongoDB</p>
                         </li>
                         <li>
                             <p><b>Web Automation:</b> Selenium, Puppeteer, Requests</p>
