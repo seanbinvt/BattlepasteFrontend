@@ -11,7 +11,7 @@ Will redirect to localhost/country/:country/:information
 */
 
 export default class SearchBattlePaste extends Component {
-
+    API_ENDPOINT = process.env.REACT_APP_API_PATH || 'https://battlepasteapi.herokuapp.com';
     constructor(props) {
         super(props);
 
@@ -66,7 +66,7 @@ export default class SearchBattlePaste extends Component {
         e.preventDefault();
         if ((this.state.coordinate[0] === this.state.server[0]) || this.state.coordinate === "") {
             //console.log('here')
-            axios.post('https://battlepasteapi.herokuapp.com/battlereport/search', {
+            axios.post(this.API_ENDPOINT + '/battlereport/search', {
                 server: this.state.server,
                 coordinate: this.state.coordinate,
                 minTotalLoss: this.state.minFleet,

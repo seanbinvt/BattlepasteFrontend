@@ -11,10 +11,10 @@ export default class Navbar extends Component {
         return (
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
                 <Link to="/" className="navbar-brand">Home</Link>
-                <div className="collpase navbar-collapse">
-                    <ul className="navbar-nav mr-auto">
+                <div className="container-fluid">
+                    <ul className="navbar-nav nav">
                         <li className="navbar-item">
-                            <Link to="/battlepaste" className="nav-link">AE Battle Paste</Link>
+                            <Link to="/battlepaste" className="nav-link">AE Battlepaste</Link>
                         </li>
                     </ul>
                 </div>

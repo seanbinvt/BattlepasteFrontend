@@ -32,6 +32,8 @@ const Ticker = props => (
 
 
 export default class ViewBattlePaste extends Component {
+    API_ENDPOINT = process.env.REACT_APP_API_PATH || 'https://battlepasteapi.herokuapp.com';
+
     constructor(props) {
         super(props);
 
@@ -45,7 +47,7 @@ export default class ViewBattlePaste extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://battlepasteapi.herokuapp.com/battlereport/' + this.state.server + '/' + this.state.mongoID, {
+        axios.get(this.API_ENDPOINT +'/battlereport/' + this.state.server + '/' + this.state.mongoID, {
         })
             .then((response) => {
                 this.setState({ report: response.data, isAuthenticating: false });

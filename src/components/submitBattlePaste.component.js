@@ -8,6 +8,7 @@ This page is a page that allows the user to select a given country and informati
 Will redirect to localhost/country/:country/:information
 */
 export default class SubmitBattlePaste extends Component {
+    API_ENDPOINT = process.env.REACT_APP_API_PATH || 'https://battlepasteapi.herokuapp.com';
     constructor(props) {
         super(props);
         this.onChangeInfo = this.onChangeInfo.bind(this)
@@ -30,7 +31,7 @@ export default class SubmitBattlePaste extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        axios.post('https://battlepasteapi.herokuapp.com/battlereport/submit', {
+        axios.post(this.API_ENDPOINT + '/battlereport/submit', {
             battlePaste: this.state.data
         }).then(function (response, error) {
             if (error) {

@@ -4,7 +4,9 @@ const compression = require('compression');
 const morgan = require('morgan');
 const path = require('path');
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
+
+require('dotenv').config()
 
 const app = express()
 const dev = app.get('env') !== 'production'
@@ -22,14 +24,14 @@ if (!dev) {
 }
 
 if (dev) {
+    console.log("dev")
     app.use(morgan('dev'))
 
-    app.use(express.static("public"));
+    app.use(express.static(path.resolve(__dirname, 'build')))
 
-    /*app.get('/', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
-    })*/
-
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+    })
 }
 
 const server = createServer(app)

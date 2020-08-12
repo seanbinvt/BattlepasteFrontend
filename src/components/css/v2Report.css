@@ -135,19 +135,27 @@ th {
 }
 
 .battle-report_info {
-  width: 380px;
+  min-width: min-content;
+  max-width: 380px;
+  width: 60%;
+  background: #112638;
   margin: auto;
-  background: #173f5f;
 }
+
 .battle-report_attack {
-  width: 580px;
-  margin: auto;
+  width: 100%;
+  max-width: 579px;
+  min-width: min-content;
   background: #112638;
+  margin: auto;
 }
+
 .battle-report_defense {
-  width: 580px;
-  margin: auto;
+  width: 100%;
+  max-width: 579px;
+  min-width: min-content;
   background: #112638;
+  margin: auto;
 }
 
 .battle-report_info {

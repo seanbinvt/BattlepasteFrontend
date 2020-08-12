@@ -23,3 +23,7 @@ html {
 a .nav-link {
   display: inline-block;
 }
+
+.navbar {
+  flex-wrap: nowrap !important;
+}
