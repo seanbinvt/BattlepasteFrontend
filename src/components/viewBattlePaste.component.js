@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './css/v2Report.css';
+import { render } from '@testing-library/react';
 
 /*
 This page is a page that allows the user to select a given country and information type from drop downs.
@@ -14,17 +15,35 @@ const Error = props => (
     </div>
 )
 
-const Unit = props => (
-    < tr align="center" >
-        <td>{props.data.Name}</td>
-        <td><b>{props.data.StartQuant}</b></td>
-        {props.data.EndQuant < props.data.StartQuant && <td className="hilite" ><b>{props.data.EndQuant}</b></td>}
-        {props.data.EndQuant === props.data.StartQuant && <td><b>{props.data.EndQuant}</b></td>}
-        <td>{props.data.Power}</td>
-        <td>{props.data.Armour}</td>
-        <td>{props.data.Shield}</td>
-    </tr >
-)
+function Unit(props) {
+    if (props.hide == true) {
+        return (
+            < tr align="center" >
+            <td>{props.data.Name}</td>
+            <td><b>{props.data.StartQuant}</b></td>
+            {props.data.EndQuant < props.data.StartQuant && <td className="hilite" ><b>{props.data.EndQuant}</b></td>}
+            {props.data.EndQuant === props.data.StartQuant && <td><b>{props.data.EndQuant}</b></td>}
+    
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr >
+        )
+    } else {
+        return (
+            < tr align="center" >
+            <td>{props.data.Name}</td>
+            <td><b>{props.data.StartQuant}</b></td>
+            {props.data.EndQuant < props.data.StartQuant && <td className="hilite" ><b>{props.data.EndQuant}</b></td>}
+            {props.data.EndQuant === props.data.StartQuant && <td><b>{props.data.EndQuant}</b></td>}
+    
+            <td>{props.data.Power}</td>
+            <td>{props.data.Armour}</td>
+            <td>{props.data.Shield}</td>
+        </tr >
+        )
+    }
+}
 
 const Ticker = props => (
     <div className="ticker"><span className="link">{props.attackerTag} {props.attacker}</span> vs. <span className="link">{props.defenderTag} {props.defender}</span> losses: {(props.attackLoss).toLocaleString()} / {(props.defendLoss).toLocaleString()}</div >
@@ -51,7 +70,6 @@ export default class ViewBattlePaste extends Component {
         })
             .then((response) => {
                 this.setState({ report: response.data, isAuthenticating: false });
-                console.log("here")
             })
             .catch((error) => {
                 this.setState({ error: true, isAuthenticating: false });
@@ -66,7 +84,6 @@ export default class ViewBattlePaste extends Component {
         } else if (this.state.error) {
             return (<Error />)
         } else {
-            console.log(this.state.error)
             var r = this.state.report
 
             var attackerBase = false // If the attacker is on his own base
@@ -82,6 +99,11 @@ export default class ViewBattlePaste extends Component {
 
             if (r.Attacker.PlayerName === "United Colonies" || r.Defender.PlayerName === "Drekons") {
                 npcAttack = true
+            }
+
+            var hideTech = false
+            if (r.AttackerUnits[0].Power == 0 || r.AttackerUnits[0].Armour == 0) {
+                hideTech = true
             }
 
             return (
@@ -144,7 +166,7 @@ export default class ViewBattlePaste extends Component {
                                 </tr>
                                 <tr><th>Unit</th><th>Start Quant.</th><th>End Quant.</th><th>Power</th><th>Armour</th><th>Shield</th></tr>
                                 {r.AttackerUnits.map(function (item) {
-                                    return < Unit data={item} key={"Attacker" + item.Name} />
+                                    return < Unit data={item} hide={hideTech} key={"Attacker" + item.Name} />
                                 })}
                             </tbody>
                         </table>
@@ -156,7 +178,7 @@ export default class ViewBattlePaste extends Component {
                                 </tr>
                                 <tr><th>Unit</th><th>Start Quant.</th><th>End Quant.</th><th>Power</th><th>Armour</th><th>Shield</th></tr>
                                 {r.DefenderUnits && r.DefenderUnits.map(function (item) {
-                                    return <Unit data={item} key={"Defender" + item.Name} />
+                                    return <Unit data={item} hide={hideTech} key={"Defender" + item.Name} />
                                 })}
                             </tbody>
                         </table>
