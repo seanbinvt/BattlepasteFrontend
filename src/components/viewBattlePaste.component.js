@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Helmet} from 'react-helmet';
 import axios from 'axios';
 import './css/v2Report.css';
 import { render } from '@testing-library/react';
@@ -108,6 +109,17 @@ export default class ViewBattlePaste extends Component {
 
             return (
                 <div>
+                    <Helmet>
+                        <title>{r.Attacker.PlayerName + " vs. " + r.Defender.PlayerName}</title>
+                        <meta property="og:title" content="Sean's Battlepaste" />
+                        <meta property="og:type" content="website" />
+                        <meta property="og:url" content={"https://seanb.herokuapp.com/battlepaste/"+this.state.server + '/' + this.state.mongoID} />
+                        <meta property="og:description" content={r.Attacker.PlayerTag +" "+r.Attacker.PlayerName+" vs. "+r.Defender.PlayerTag+" "+r.Defender.PlayerName + " losses: "+(r.AttackerLoss).toLocaleString()+" / "+(r.DefenderLoss).toLocaleString()} />
+                        <meta content='https://seanb.herokuapp.com/icon.ico' property='og:image'></meta>
+                        <meta name="theme-color" content="#FF0000"/>
+                        <meta name="twitter:card" content="summary_large_image"/>
+                    </Helmet>
+
                     <Ticker attackerTag={r.Attacker.PlayerTag} attacker={r.Attacker.PlayerName} defenderTag={r.Defender.PlayerTag} defender={r.Defender.PlayerName} attackLoss={r.AttackerLoss} defendLoss={r.DefenderLoss} />
                     <div className="battle-report" align="center">
                         <table className="battle-report_info">
