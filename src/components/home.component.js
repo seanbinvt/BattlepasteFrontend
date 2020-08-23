@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Helmet} from 'react-helmet';
 
 import "./css/home.css"
 
@@ -7,6 +8,9 @@ export default class Navbar extends Component {
     render() {
         return (
             <div>
+                                <Helmet>
+                        <title>Sean - Portfolio</title>
+                    </Helmet>
                 <h4>Sean B.</h4>
                 <h5>Junior Software Developer</h5>
                 <br />

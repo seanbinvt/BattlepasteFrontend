@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 import './css/search.css'
 
 import 'bootstrap';
@@ -105,6 +106,9 @@ export default class SearchBattlePaste extends Component {
 
         return (
             <div className="text-center">
+                <Helmet>
+                        <title>Search</title>
+                    </Helmet>
                 <h2>BattlePaste Search</h2>
                 <form onSubmit={this.onSubmit}>
                     <div className="input-group container-search">

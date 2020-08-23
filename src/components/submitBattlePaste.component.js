@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 
 
 /*
@@ -60,6 +61,9 @@ export default class SubmitBattlePaste extends Component {
     render() {
         return (
             <div>
+                                <Helmet>
+                        <title>Submit</title>
+                    </Helmet>
                 <center>
                     <h3>Submit Battle Report</h3>
                     <p>Please paste your battle report starting from "Battle Report" to the very end.</p>
