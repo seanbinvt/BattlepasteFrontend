@@ -96,7 +96,7 @@ export default class SearchBattlePaste extends Component {
     }
 
     render() {
-        const servers = ["Antares", "Ares", "Nexus", "Mystic", "Lynx", "Kepler", "Jade", "Iridium", "Hydra", "Gaia", "Frontier", "Elysium", "Drako", "Centauri", "Bravo", "Andromeda",
+        const servers = ["Babylon","Antares", "Ares", "Nexus", "Mystic", "Lynx", "Kepler", "Jade", "Iridium", "Hydra", "Gaia", "Frontier", "Elysium", "Drako", "Centauri", "Bravo", "Andromeda",
             "Utopia", "Typhon", "Sigma", "Rigel", "Quantum", "Pegasus", "Omega", "Nova", "Mira", "Lyra", "Kappa", "Juno", "Ixion", "Helion", "Gamma", "Fenix", "Epsilon", "Delta", "Ceti", "Beta", "Alpha"]
 
         var Data = servers,
