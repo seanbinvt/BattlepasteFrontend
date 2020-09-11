@@ -20,7 +20,7 @@ export default class SearchBattlePaste extends Component {
             reports: [],
             player: "",
             minFleet: 0,
-            server: "Antares",
+            server: "Babylon",
             coordinate: "",
             error: false,
             searched: false
